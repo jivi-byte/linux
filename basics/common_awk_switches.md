@@ -17,9 +17,9 @@
 ### Version and basic printing
 
 ```bash
-awk --version
-awk '{print}' filename
-awk 'NF>0' filename
+`To check awk version` - awk --version
+`To print contents of the file` - awk '{print}' filename
+`To only print non-blank lines of the file` - awk 'NF>0' filename
 ```
 
 - `awk 'NF>0' filename` prints only non-blank lines.
