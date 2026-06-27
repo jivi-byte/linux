@@ -1,0 +1,21 @@
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+/	    :- root of the virtual directory, where normally, no files are placed
+/bin	:- binary directory, where many GNU user-level utilities are stored
+/boot	:- boot directory, where boot files are stored
+/dev	:- device directory, where Linux creates device nodes
+/etc	:- system configuration files directory
+/home	:- home directory, where Linux creates user directories
+/lib	:- library directory, where system and application library files are stored
+/media	:- media directory, a common place for mount points used for removable media
+/mnt	:- mount directory, another common place for mount points used for removable media
+/opt	:- optional directory, often used to store third-party software packages and data files
+/proc	:- process directory, where current hardware and process information is stored
+/root	:- root home directory
+/sbin	:- system binary directory, where many GNU admin-level utilities are stored
+/run	:- run directory, where runtime data is held during system operation
+/srv	:- service directory, where local services store their files
+/sys	:- system directory, where system hardware information files are stored
+/tmp	:- temporary directory, where temporary work files can be created and destroyed
+/usr	:- user binary directory, where the bulk of GNU user-level utilities and data files are stored
+/var	:- variable directory, for files that change frequently, such as log files
+---------------------------------------------------------------------------------------------------------------------------------------------------------
