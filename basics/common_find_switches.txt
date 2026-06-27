@@ -1,0 +1,45 @@
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+To run the last find command that was executed                                            :-  !find
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+To find files/directories with a specific name, relative to current working directory     :-  find . -name "myFile.txt"
+To find files/directories with a specific name (case insensitive search)                  :-  find . -iname "myFile.txt"
+To find files/directories with a specific extension, use a wildcard                       :-  find . -name "*.txt"
+To find files/directories matching one of many extensions, use the or flag                :-  find . -name "*.txt" -o -name "*.sh"
+To search for files only                                                                  :-  find . -type f
+To search for directories only                                                            :-  find . -type d
+To find files having white spaces in the name                                             :-  find . -type f -name "*filename*" -print | grep " "
+To find files/directories which name begin with abc and end with one alpha character	  :-  find . -name "abc[a-z][0-9]"
+following by one digit
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+To change permissions of all sub-directories in a directory                               :-  find . -type d -print | xargs -r chmod 770
+                                                                                          :-  find . -type d -exec chmod 770 {} \;
+                                                                                          :-  find . -type d | while read -r d; do chmod 770 "$d"; done
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+To find files that have been modified within the last 2 hours                             :-  find . -mmin -120
+To find files that have not been modified within the last 2 hours                         :-  find . -mmin +120
+To find files that have been accessed within the last 2 hours                             :-  find . -amin -120
+To find files that have not been accessed within the last 2 hours                         :-  find . -amin +120
+To find files that have been modified within the last 2 days                              :-  find . -mtime -2
+To find files that have been modified in exact 2 day                                      :-  find . -mtime 2
+                                                                                          :-  find . -mtime +1 -mtime -3
+To find files that have not been modified within the last 2 days                          :-  find . -mtime +2
+To find files modified in a date range	                                                  :-  find . -type f -newermt yyyy-mm-dd ! -newermt yyyy-mm-dd
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+To find files larger than 15MB                                                            :-  find . -type f -size +15M
+To find files less than 15KB                                                              :-  find . -type f -size +15k
+To find files exactly of 15KB size                                                        :-  find . -type f -size 15k
+To find files more than 1 MB and less than 5 MB                                           :-  find . -type f -size +1M -size -5M
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+To find only files containing log anywhere in their path (folder or name)                 :-  find . -type f -path '*log*'
+To find only files within a folder called log (on any level)                              :-  find . -type f -path '*/log/*'
+To find only files within a folder called log or data                                     :-  find . -type f -path '*/log/*' -o -path '*/data/*'
+To find all files except the ones contained in a folder called bin                        :-  find . -type f -not -path '*/bin/*'
+To find all files of type .txt from the current directory                                 :-  find . -maxdepth 1 -type f -name "*.txt"
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+To find all files and directories which holds 777 permissions                             :-  find . -perm 777
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+To find all text files that contains the word exception                                   :-  find . -name "*.txt" | xargs grep -i "Exception"
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+To find and delete temporary files in current directory                                   :-  find . -iname "*.tmp" | xargs rm -f
+                                                                                          :-  find . -iname "*.tmp" -delete
+--------------------------------------------------------------------------------------------------------------------------------------------------------  
